@@ -110,10 +110,6 @@ deleteProduct(req,res) {
       }
 }
 
-
-
-
-
 }
 
 
