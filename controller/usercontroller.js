@@ -13,7 +13,7 @@ userRouter.get('/:id', (req, res) => {
     users.fetchUser(req, res)
 })
 
-userRouter.post('./register', (req, res) => {
+userRouter.post('/register', (req, res) => {
     users.registerUser(req, res)
 })
 
