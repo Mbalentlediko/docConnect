@@ -7,27 +7,27 @@ const doctorRouter = express.Router()
 doctorRouter.use(bodyParser.json())
 
 doctorRouter.get('/',  (req, res) => {
-    doctors.fetchdoctors(req, res)
+    doctors.fetchDoctors(req, res)
 })
 
 doctorRouter.get('/recent', (req, res) => {
-    doctors.recentdoctors(req, res)
+    doctors.recentDoctors(req, res)
 })
 
 doctorRouter.get('/:id',  (req, res) => {
-    doctors.fetchdoctor(req, res)
+    doctors.fetchDoctor(req, res)
 })
 
 doctorRouter.post('/add',  (req, res) => {
-    doctors.adddoctor(req, res)
+    doctors.addDoctor(req, res)
 })
 
 doctorRouter.patch('/:id',  (req, res) => {
-    doctors.updatedoctors(req, res)
+    doctors.updateDoctors(req, res)
 })
 
 doctorRouter.delete('/:id',  (req, res) => {
-    doctors.deletedoctor(req, res)
+    doctors.deleteDoctor(req, res)
 })
 
 export {
