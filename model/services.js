@@ -111,6 +111,7 @@ deleteProduct(req,res) {
 }
 
 }
+export{services}
 
 
 
