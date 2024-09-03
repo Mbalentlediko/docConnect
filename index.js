@@ -1,13 +1,14 @@
-import { userRouter } from "./controller/usercontroller";
-import { serviceRouter } from "./controller/servicecontroller";
-import { doctorRouter } from "./controller/doctorContoller";
-import { appointmentRouter } from "./controller/appointmentcontroller";
+import { userRouter } from "./controller/usercontroller.js"
+import { serviceRouter } from "./controller/servicecontroller.js";
+import { doctorRouter } from "./controller/doctorContoller.js";
+import { appointmentRouter } from "./controller/appointmentcontroller.js";
 import express from 'express'
+import 'dotenv/config'
 import path from'path'
 import bodyParser from "body-parser";
 
 const app = express ()
-const PORT = +process.env.PORT 
+const port = +process.env.PORT 
 
 app.use((req,res, next)=> {
     res.header('Access-Control-Allow-Origin','*');

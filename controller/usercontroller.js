@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import {users} from '../model/users'
+import {users} from '../model/users.js'
 
 const userRouter = express.Router()
 userRouter.use(bodyParser.json())

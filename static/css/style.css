@@ -5,3 +5,55 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    color: #007bff; /* Hospital blue */
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+  }
+  
+  h2 {
+    color: #0056b3; /* Darker blue */
+    margin-top: 30px;
+    padding-bottom: 5px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  thead {
+    background-color: #007bff; /* Hospital blue */
+    color: #fff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for alternating rows */
+  }
+  
+  tbody tr:hover {
+    background-color: #e9ecef; /* Light hover color */
+  }
+  
+  th {
+    background-color: #0056b3; /* Darker blue for header */
+    color: #fff;
+  }
+  
