@@ -7,3 +7,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Main container */
+.container {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .display-2 {
+    color: #007bff; /* Blue text color */
+    text-align: center;
+  }
+  
+  /* Form styles */
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #f8f9fa; /* Light grey to contrast the white container */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #007bff; /* Blue border */
+  }
+  
+  /* Input group */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    color: #28a745; /* Green label text */
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; /* Light grey border */
+    background-color: #ffffff; /* White background */
+  }
+  
+  /* Button styles */
+  .primary-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Blue button */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .primary-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .secondary-button {
+    background-color: #28a745; /* Green button */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .secondary-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .additional-actions {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
