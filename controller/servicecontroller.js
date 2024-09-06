@@ -1,33 +1,25 @@
-import express from 'express'
-import bodyParser  from 'body-parser'
-import {services} from '../model/services.js'
+import express from "express";
+import bodyParser from "body-parser";
+import { services } from "../model/services.js";
 
-const serviceRouter = express.Router()
+const serviceRouter = express.Router();
+const serviceController = new services();
+serviceRouter.use(bodyParser.json());
 
-serviceRouter.use(bodyParser.json())
+serviceRouter.get("/", (req, res) => {
+  serviceController.fetchServices(req, res);
+});
+serviceRouter.get("/:id", (req, res) => {
+  serviceController.fetchService(req, res);
+});
+serviceRouter.post("/add", (req, res) => {
+  serviceController.addService(req, res);
+});
+serviceRouter.patch("/:id", (req, res) => {
+  serviceController.updateService(req, res);
+});
+serviceRouter.delete("/:id", (req, res) => {
+  serviceController.deleteService(req, res);
+});
 
-serviceRouter.get('/',(req,res) => {
-    services.fetchServices(req,res)
-})
-// serviceRouter.get('/rece',(req,res) => {
-//     services.fetchServices(req,res)
-// })
-serviceRouter.get('/:id',(req,res) => {
-    services.fetchServices(req,res)
-})
-serviceRouter.get('/:id',(req,res) => {
-    services.fetchService(req,res)
-})
-serviceRouter.post('/add',(req,res) => {
-    services.addService(req,res)
-})
-serviceRouter.patch('/:id',(req,res) => {
-    services.updateService(req,res)
-})
-serviceRouter.delete('/:id',(req,res) => {
-    services.deleteService(req,res)
-})
-
-export{
-    serviceRouter
-}
+export { serviceRouter };
