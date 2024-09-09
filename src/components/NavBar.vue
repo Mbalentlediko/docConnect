@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light medical-blue-bg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -25,7 +25,7 @@
             <router-link class="nav-link" to="/services">Services</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/checkout">Checkout</router-link>
+            <router-link class="nav-link" to="/ReachUs">Reach Us</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/">Link</router-link>
@@ -39,11 +39,16 @@
 <script>
 export default {
   name: "NavBarComp"
-}
+};
 </script>
 
 <style scoped>
-.navbar {
-  margin-bottom: 20px;
+.medical-blue-bg {
+  background-color: #007bff; /* Medical shade of blue */
+}
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important; /* White text for better contrast */
 }
 </style>
+
