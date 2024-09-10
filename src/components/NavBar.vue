@@ -22,9 +22,6 @@
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/services">Services</router-link>
-          </li>
-          <li class="nav-item">
             <router-link class="nav-link" to="/getDoctor">Find Doctor</router-link>
           </li>
           <li class="nav-item">
