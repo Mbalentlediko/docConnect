@@ -25,10 +25,10 @@
             <router-link class="nav-link" to="/services">Services</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/ReachUs">Reach Us</router-link>
+            <router-link class="nav-link" to="/getDoctor">Find Doctor</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Link</router-link>
+            <router-link class="nav-link" to="/ReachUs">Reach Us</router-link>
           </li>
         </ul>
       </div>
