@@ -1,34 +1,44 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav> -->
-  <NavBar/>
-  <Footer/>
-  <NavBar/>
-<Footer/>
-  <router-view/>
+  <div>
+    <!-- Show Login Form if not logged in -->
+    <div v-if="!isLoggedIn">
+      <LoginVue @login-success="handleLoginSuccess" />
+    </div>
+    
+    <!-- Show NavBar, Footer, and the rest of the content after successful login -->
+    <div v-else>
+      <NavBar />
+      <router-view />
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
-import Footer from '@/components/Footer.vue'
-export default {
-  name: 'App',
-  components: {
-    NavBar,
-    Footer
-import NavBar from './components/NavBar.vue'
-import Footer from './components/Footer.vue'
+import NavBar from '@/components/NavBar.vue';
+import Footer from '@/components/Footer.vue';
+import LoginVue from '@/views/LoginVue.vue';
 
 export default {
+  data() {
+    return {
+      isLoggedIn: false, // Initialize with not logged in
+    };
+  },
   components: {
     NavBar,
-    Footer
-   
+    Footer,
+    LoginVue,
+  },
+  methods: {
+    // This method is called when the user successfully logs in
+    handleLoginSuccess() {
+      this.isLoggedIn = true; // Mark the user as logged in
+    }
   }
-}
+};
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
