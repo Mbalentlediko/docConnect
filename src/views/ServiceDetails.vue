@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <h2 class="display-2">Product Details</h2>
+            <h2 class="display-2">Service Details</h2>
         </div>
         <div class="row justify-content-center" v-if="product">
             <Card>
