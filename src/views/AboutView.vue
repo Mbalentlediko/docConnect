@@ -48,7 +48,7 @@ export default {
   padding: 2rem;
 }
 h2, h3 {
-  color: #004080; /* Hospital branding color */
+  color: #004080; 
 }
 </style>
 

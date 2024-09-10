@@ -1,7 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light medical-blue-bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://mbalentlediko.github.io/Images/static/DocConnect.png" alt="DocConnect Logo" class="navbar-logo">
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/"><i class="bi bi-house-check-fill"></i> Home</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/about">About</router-link>
@@ -41,11 +44,17 @@ export default {
 
 <style scoped>
 .medical-blue-bg {
-  background-color: #007bff; /* Medical shade of blue */
+  background-color: #007bff;
 }
+
 .navbar-brand,
 .nav-link {
-  color: #ffffff !important; /* White text for better contrast */
+  color: #ffffff !important;
+}
+
+/* Adjust logo size */
+.navbar-logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto;
 }
 </style>
-

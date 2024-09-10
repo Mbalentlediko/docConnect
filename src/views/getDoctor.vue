@@ -1,25 +1,45 @@
 <template>
-    <div class="card-deck">
-      <!-- Show Spinner while loading -->
-      <SpinnerComp v-if="loading" />
+    <div class="container">
+      <div class="row">
+        <h2 class="display-2">Available Doctors</h2>
+      </div>
+      
+    
+      <div class="row justify-content-center">
+        <CardComp
+          v-for="doctor in doctors"
+          :key="doctor.doctor_id"
+          class="doctor-card"
+        >
+          <template #cardHeader>
+            <img :src="doctor.profile_picture_url" loading="lazy" class="img-fluid rounded-circle" :alt="doctor.specialty">
+          </template>
+          <template #cardBody>
+            <h5 class="card-title fw-bold">{{ doctor.specialty }}</h5>
+            <p class="lead">Location: {{ doctor.location }}</p>
+          </template>
+          <template #cardBack>
+            <h5 class="card-title fw-bold">{{ doctor.specialty }}</h5>
+            <p class="lead">{{ doctor.description }}</p>
+            <p class="lead"><span class="text-success fw-bold">Contact:</span> {{ doctor.contact_info }}</p>
+          </template>
+        </CardComp>
+      </div>
   
-      <!-- Show Cards after loading -->
-      <CardComp
-        v-for="(doc) in doctors"
-        :key="doc.doctor_id"
-        :doctor="doc"
-        v-else
-      />
+     
+      <div v-if="loading" class="row justify-content-center">
+        <SpinnerComp />
+      </div>
     </div>
   </template>
   
   <script>
-  import CardComp from './CardComp.vue';
-  import SpinnerComp from './SpinnerComp.vue';
-  import axios from 'axios';
+  import CardComp from '@/components/CardComp.vue'
+  import SpinnerComp from '@/components/Spinner.vue'
+  import axios from 'axios'
   
   export default {
-    name: "DoctorsList",
+    name: 'DoctorsList',
     components: {
       CardComp,
       SpinnerComp
@@ -36,7 +56,7 @@
     methods: {
       async fetchDoctors() {
         try {
-          const response = await axios.get('/api/doctors');
+          const response = await axios.get('https://docconnect-tq6o.onrender.com/doctors'); 
           this.doctors = response.data;
         } catch (error) {
           console.error('Error fetching doctors:', error);
@@ -49,10 +69,20 @@
   </script>
   
   <style scoped>
-  .card-deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .doctor-card {
+    margin: 1rem;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   </style>
   

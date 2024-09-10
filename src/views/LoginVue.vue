@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="login-container">
     <form @submit.prevent="handleLogin">
       <div class="mb-3">
@@ -77,4 +77,4 @@ h2 {
 .btn-primary:hover {
   background-color: #0066cc; /* Slightly darker blue on hover */
 }
-</style>
+</style> -->
