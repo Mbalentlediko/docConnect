@@ -1,69 +1,71 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <h2 class="display-2">Available Doctors</h2>
-    </div>
-    
+  <div class="container-fluid d-flex justify-center align-items-center gap-5 flex-column">
+    <h2 class="display-2">Available Doctors</h2>
+
+    <SpinnerComp v-if="loading" />
+
     <div class="row justify-content-center">
-      <CardComp
+      <Card
         v-for="doctor in doctors"
         :key="doctor.doctor_id"
         class="doctor-card"
       >
-        <template #cardHeader>
-          <img :src="doctor.profile_picture_url" loading="lazy" class="img-fluid rounded-circle" :alt="doctor.specialty">
+        <template v-slot:cardHeader>
+          <img
+            :src="doctor.profile_picture_url"
+            loading="lazy"
+            class="img-fluid rounded-circle"
+            :alt="doctor.specialty"
+          />
         </template>
-        <template #cardBody>
+        <template v-slot:cardBody>
           <h5 class="card-title fw-bold">{{ doctor.specialty }}</h5>
           <p class="lead">Location: {{ doctor.location }}</p>
         </template>
-        <template #cardBack>
+        <template v-slot:cardBack>
           <h5 class="card-title fw-bold">{{ doctor.specialty }}</h5>
           <p class="lead">{{ doctor.description }}</p>
-          <p class="lead"><span class="text-success fw-bold">Contact:</span> {{ doctor.contact_info }}</p>
+          <p class="lead">
+            <span class="text-success fw-bold">Contact:</span>
+            {{ doctor.contact_info }}
+          </p>
         </template>
-      </CardComp>
-    </div>
-
-    <div v-if="loading" class="row justify-content-center">
-      <SpinnerComp />
+      </Card>
     </div>
   </div>
 </template>
 
+
 <script>
-import CardComp from '@/components/Card.vue';
-import SpinnerComp from '@/components/Spinner.vue';
-import axios from 'axios';
+import Card from "@/components/Card.vue";
+import SpinnerComp from "@/components/Spinner.vue";
+import { mapState } from "vuex";
 
 export default {
-  name: 'DoctorsList',
+  name: "DoctorsList",
   components: {
-    CardComp,
-    SpinnerComp
+    Card,
+    SpinnerComp,
+  },
+  computed: {
+    ...mapState(["doctors"]),
   },
   data() {
     return {
-      doctors: [],
-      loading: true 
+      loading: true,
     };
   },
   mounted() {
     this.fetchDoctors();
+    console.log(this.doctors);
   },
   methods: {
     async fetchDoctors() {
-      this.loading = true; // Show the spinner while loading
-      try {
-        const response = await axios.get('https://docconnect-tq6o.onrender.com/doctors');
-        this.doctors = response.data;
-      } catch (error) {
-        console.error('Error fetching doctors:', error);
-      } finally {
-        this.loading = false; // Hide the spinner after fetching data
-      }
-    }
-  }
+      this.loading = true;
+      await this.$store.dispatch("fetchAllDoctors");
+      this.loading = false;
+    },
+  },
 };
 </script>
 

@@ -1,12 +1,12 @@
 <template>
   <div class="card-wrapper">
     <div class="card">
-      <!-- Front Side -->
+      
       <div class="card-front">
         <slot name="cardHeader"></slot>
         <slot name="cardBody"></slot>
       </div>
-      <!-- Back Side -->
+   
       <div class="card-back">
         <slot name="cardBack"></slot>
       </div>
@@ -22,8 +22,9 @@ export default {
 
 <style scoped>
 .card-wrapper {
-  perspective: 1000px;
-  width: 18rem;
+  perspective: 1000px; 
+  width: 18rem; 
+  height: 24rem; 
   margin: 1rem;
 }
 
@@ -31,33 +32,35 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
+  transform-style: preserve-3d; 
+  transition: transform 0.6s; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  overflow: hidden; 
 }
 
 .card:hover {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); 
 }
 
-.card-front,
-.card-back {
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
 }
 
 .card-front {
-  background-color: white;
-  padding: 20px;
+  background-color: white; 
 }
 
 .card-back {
   background-color: #f8f9fa;
-  padding: 20px;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); 
 }
 </style>

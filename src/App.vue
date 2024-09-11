@@ -3,7 +3,7 @@
     
     <NavBar />
     <router-view />
-    <Footer />
+    <Footer class="fixed-bottom" />
   </div>
 </template>
 
