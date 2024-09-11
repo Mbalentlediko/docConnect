@@ -10,9 +10,9 @@ doctorRouter.get("/", (req, res) => {
   doctorContoller.fetchDoctors(req, res);
 });
 
-doctorRouter.get("/recent", (req, res) => {
-  doctorContoller.recentDoctors(req, res);
-});
+// doctorRouter.get("/recent", (req, res) => {
+//   doctorContoller.recentDoctors(req, res);
+// });
 
 doctorRouter.get("/:id", (req, res) => {
   doctorContoller.fetchDoctor(req, res);

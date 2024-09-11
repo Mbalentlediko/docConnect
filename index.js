@@ -9,6 +9,7 @@ import path from "path";
 // Create an express app
 const app = express();
 const port = +process.env.PORT || 4000;
+
 // Middleware
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
