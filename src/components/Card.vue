@@ -24,6 +24,7 @@ export default {
 .card-wrapper {
   perspective: 1000px;
   width: 18rem;
+  margin: 1rem;
 }
 
 .card {
@@ -32,6 +33,9 @@ export default {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -46,9 +50,14 @@ export default {
   backface-visibility: hidden;
 }
 
-.card-back {
-  transform: rotateY(180deg);
-  background: #f8f9fa;
+.card-front {
+  background-color: white;
   padding: 20px;
+}
+
+.card-back {
+  background-color: #f8f9fa;
+  padding: 20px;
+  transform: rotateY(180deg);
 }
 </style>

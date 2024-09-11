@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Always show NavBar, Footer, and the rest of the content -->
+    
     <NavBar />
     <router-view />
     <Footer />
@@ -9,7 +9,7 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-import Footer from '@/components/Footer.vue';
+import Footer from '@/components/footer.vue';
 
 export default {
   components: {
