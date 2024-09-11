@@ -52,9 +52,10 @@ export default {
   color: #ffffff !important;
 }
 
-/* Adjust logo size */
+
 .navbar-logo {
-  height: 40px; /* Adjust height as needed */
+  height: 40px; 
   width: auto;
+  border-radius: 150px;
 }
 </style>

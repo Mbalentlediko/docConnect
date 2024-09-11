@@ -7,9 +7,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Main container */
+
 .container {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,14 +21,14 @@
     text-align: center;
   }
   
-  /* Form styles */
+ 
   .login-form {
     width: 100%;
     max-width: 400px;
-    background-color: #f8f9fa; /* Light grey to contrast the white container */
+    background-color: #f8f9fa; 
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #007bff; /* Blue border */
+    border: 1px solid #007bff; 
   }
   
   /* Input group */
@@ -75,7 +75,7 @@
   }
   
   .secondary-button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
   }
   
   .additional-actions {
@@ -108,6 +108,10 @@
     max-width: 400px;
     width: 100%;
     text-align: center;
+  }
+
+  li{
+    list-style-type: none;
   }
   
   

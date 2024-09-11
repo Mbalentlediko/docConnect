@@ -68,7 +68,7 @@ export default {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  animation: slowVideo 50s infinite linear; /* Adjust the duration to slow it down */
+  animation: slowVideo 30s infinite linear; 
 }
 
 @keyframes slowVideo {
@@ -76,7 +76,7 @@ export default {
     transform: scale(1);
   }
   to {
-    transform: scale(1.05); /* Slight zoom-in effect to add smoothness */
+    transform: scale(1.05); 
   }
 }
 
