@@ -10,26 +10,27 @@ function createToken(user) {
     },
     process.env.SECRET_KEY,
     {
-      expiresIn: "ih",
+      expiresIn: "1.5h",
     }
   );
 }
 function verifyToken(req, res, next) {
-  const token = req?.headers["authorization"];
-  if (token) {
-    if (verify(token, process.env.SECRET_KEY)) {
-      next();
-    } else {
-      res?.json({
-        status: res.statusCode,
-        msg: "Please provide the correct credentials",
-      });
-    }
-  } else {
-    res?.json({
-      status: res.statusCode,
-      msg: "Please login",
-    });
+    
+  const token = req.headers['Authorization']
+  if(token) {
+      if(verify(token, process.env.SECRET_KEY)){
+          next()
+      }else {
+          res?.json({
+              status: res.statusCode,
+              msg: "Please provide the correct details."
+          })
+      }
+  }else {
+      res.json({
+          status: res.statusCode,
+          msg: "Please login."
+      })
   }
 }
 
