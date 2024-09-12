@@ -3,7 +3,6 @@ import { serviceRouter } from "./controller/servicecontroller.js";
 import { appointmentRouter } from "./controller/appointmentcontroller.js";
 import { doctorRouter } from "./controller/doctorContoller.js";
 import { errorHandling } from "./middleware/errorhandling.js";
-import {cookieParser} from 'cookie-parser'
 import express from "express";
 import { fileURLToPath } from 'url';
 import { config } from 'dotenv'
@@ -33,7 +32,6 @@ app.use(
   express.urlencoded({
     extended: true,
   }),
-  cookieParser(),
   cors()
 );
 

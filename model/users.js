@@ -70,11 +70,11 @@ class users {
   async registerUser(req, res) {
     try {
       let data = req.body;
-      data.password = await hash(data.password, 12);
+      data.password_hash = await hash(data.password_hash, 12);
       // Payload
       let user = {
         emailAdd: data.email,
-        password: data.password,
+        password_hash: data.password_hash,
       };
       let strQry = `
             INSERT INTO users
@@ -106,8 +106,8 @@ class users {
   async updateUser(req, res) {
     try {
       let data = req.body;
-      if (data.password) {
-        data.password = await hash(data.password, 12);
+      if (data.password_hash) {
+        data.password_hash = await hash(data.password_hash, 12);
       }
       const strQry = `
             update users
@@ -161,7 +161,7 @@ class users {
   }
   async login(req, res) {
     try {
-      const { emailAdd, pwd } = req.body;
+      const { email, password_hash } = req.body;
       const strQry = `
             SELECT user_id,  name,email,
                  password_hash,,phone_number
@@ -177,7 +177,7 @@ class users {
             msg: "You provided a wrong email.",
           });
         } else {
-          const isValidPass = await compare(pwd, result[0].pwd);
+          const isValidPass = await compare(password_hash, result[0].pwd);
           if (isValidPass) {
             const token = createToken({
               email,
