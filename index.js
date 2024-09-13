@@ -6,6 +6,7 @@ import { errorHandling } from "./middleware/errorhandling.js";
 import express from "express";
 import { fileURLToPath } from 'url';
 import { config } from 'dotenv'
+config()
 import cors from "cors";
 import path from "path";
 
