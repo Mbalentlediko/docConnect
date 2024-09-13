@@ -1,10 +1,9 @@
 <template>
   <div class="about-container">
-    <h1>Here are a few things about us 💙:</h1>
-    <div class="image-container">
-      <img src="https://mbalentlediko.github.io/Images/static/aboutpage.jpg" alt="About DocConnect" class="responsive-image" />
-    </div>
-
+  
+     <div class="content-row centre">
+      <h1> A few things about us 💙</h1>
+     </div>
     <div class="content-row right">
       <div class="col-md-6 blog-style-column">
         <h2>About DocConnect</h2>
@@ -12,9 +11,10 @@
       </div>
     </div>
 
+    
     <div class="divider"></div>
 
-    
+
     <div class="content-row left">
       <div class="col-md-6 blog-style-column">
         <h3>Key Features</h3>
@@ -27,9 +27,10 @@
       </div>
     </div>
 
+    
     <div class="divider"></div>
 
-
+   
     <div class="content-row right">
       <div class="col-md-6 blog-style-column">
         <h3>Our Mission</h3>
@@ -37,8 +38,10 @@
       </div>
     </div>
 
+    
     <div class="divider"></div>
 
+  
     <div class="content-row left">
       <div class="col-md-6 blog-style-column">
         <h3>How It Works</h3>
@@ -50,6 +53,7 @@
       </div>
     </div>
 
+    
     <div class="divider"></div>
 
     <div class="content-row right">
@@ -64,24 +68,19 @@
       </div>
     </div>
 
-
+    
     <div class="divider"></div>
 
-
+  
     <div class="content-row left">
       <div class="col-md-6 blog-style-column">
         <h3>What Our Users Say</h3>
-        <blockquote>"DocConnect made finding the right specialist so easy. I booked my appointment within minutes!" - Patient A</blockquote>
-        <blockquote>"Thanks to DocConnect, I can schedule appointments with my doctor without any hassle." - Patient B</blockquote>
+        <blockquote>"DocConnect made finding the right specialist so easy. I booked my appointment within minutes!" - T.Poswayo</blockquote>
+        <blockquote>"Thanks to DocConnect, I can schedule appointments with my doctor without any hassle." - M.Mbuzwana</blockquote>
       </div>
     </div>
 
-
-    <div class="image-container">
-      <img src="https://mbalentlediko.github.io/Images/static/div6.jpg" alt="Healthcare Image" class="responsive-image" />
-    </div>
-
-
+  
     <p>Ready to book your appointment? <a href="/get-doctor">Find a Doctor</a> today!</p>
   </div>
 </template>
@@ -104,25 +103,12 @@ export default {
   font-family: 'Roboto', sans-serif;
 }
 
-.image-container {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 
 .content-row {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  margin: 2rem 0;
+  /* margin: 0rem 0; */
 }
 
 .content-row.right {
@@ -137,24 +123,27 @@ export default {
 .blog-style-column {
   background-color: white;
   padding: 1.5rem;
-  margin: 1.5rem;
+  margin: 0rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 600px;
-  width: 100%;
+  max-width: 800px;
+  width: 300%;
 }
+
 
 .blog-style-column:hover {
   transform: translateY(-10px);
 }
+
 
 h1,h2, h3 {
   font-family: 'Playfair Display', serif;
   color: #004080;
   font-weight: bold;
 }
+
 
 .divider {
   width: 100px;
@@ -171,5 +160,16 @@ blockquote {
   padding: 10px;
   border-left: 5px solid #004080;
   margin: 1.5rem 0;
+}
+.content-row {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+}
+h1{
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-weight: bold;
 }
 </style>

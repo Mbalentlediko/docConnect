@@ -29,8 +29,8 @@ export default {
 }
 
 .card {
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   position: relative;
   transform-style: preserve-3d; 
   transition: transform 0.6s; 

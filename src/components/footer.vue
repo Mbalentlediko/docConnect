@@ -19,8 +19,8 @@
   
   <style scoped>
   .footer {
-    background-color: #f8f9fa; /* Neutral light color */
-    color: #0066cc; /* Blue color similar to hospital branding */
+    background-color: #007bff;
+    color:#f8f9fa;
     padding: 10px 0;
     text-align: center;
   }

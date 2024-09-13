@@ -14,7 +14,7 @@
 export default {
   methods: {
     findDoctor() {
-      this.$router.push('/get-doctor'); 
+      this.$router.push('/getDoctor'); 
     }
   }
 }

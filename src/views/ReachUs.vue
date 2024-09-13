@@ -1,114 +1,172 @@
 <template>
-    <div class="contact-container">
-      <div class="row">
-        <h2 class="display-2">Reach Us</h2>
-        <p>If you have any inquiries, feel free to get in touch with us using the form below.</p>
+  <div class="admin-container">
+    <div class="content-wrapper">
+      <!-- Left Section: Comforting Words and Info Box -->
+      <div class="left-section">
+        <div class="comforting-words blog">
+          <h2>We care 💙</h2>
+          <p>
+            "In times of illness, may hope be your constant companion. Remember, you are not alone in this journey, and brighter days are ahead. Stay strong, and take comfort in the support of your loved ones."
+          </p>
+        </div>
+        
+        <div class="info-box">
+          <p>
+            For inquiries or assistance with the admin panel, please reach out to us through the contact form. We are here to support you with all admin-related queries.
+          </p>
+        </div>
       </div>
-      
-      <div class="contact-form">
-        <form @submit.prevent="handleSubmit">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" v-model="name" required />
+
+      <!-- Right Section: Contact Info Form -->
+      <div class="right-section">
+        <h2 class="display-2">Talk to us</h2>
+        <div class="contact-info">
+          <div class="contact-item" v-for="contact in contacts" :key="contact.id">
+            <h3>{{ contact.title }}</h3>
+            <p>{{ contact.details }}</p>
           </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" class="form-control" v-model="email" required />
-          </div>
-  
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" class="form-control" v-model="message" rows="5" required></textarea>
-          </div>
-  
-          <button type="submit" class="btn-submit">Send Message</button>
-        </form>
+        </div>
       </div>
     </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  
-  const name = ref('');
-  const email = ref('');
-  const message = ref('');
-  
-  const handleSubmit = () => {
-    alert(`Message from ${name.value} has been submitted.`);
-   
-  };
-  </script>
-  
-  <style scoped>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://mbalentlediko.github.io/Images/static/contactpage.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .contact-container {
-    max-width: 600px;
-    width: 100%;
-    padding: 20px;
-    /* background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px; */
-    background-color: #f7f7f7;
+  </div>
+</template>
+
+
+<script setup>
+import { ref } from 'vue';
+
+const contacts = ref([
+  { id: 1, title: "Email", details: "info@doccconnect.com" },
+  { id: 2, title: "Phone", details: "021 560 8875" },
+  { id: 3, title: "Location", details: "314 Imam Haron Road" },
+]);
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.admin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8dff5, #7ac7e3, #58aadb); 
+  padding: 80px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px; /* Adjust width as needed */
+}
+
+.left-section, .right-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 20px;
+  border-right: 2px solid #e0e0e0; /* Optional separator between sections */
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.comforting-words, .info-box {
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0044cc;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  color: #003399;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Optional animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  h2 {
-    color: #0044cc; 
-    text-align: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  p {
-    text-align: center;
-    color: #333;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .contact-form {
-    margin-top: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .form-group {
-    margin-bottom: 15px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  
-  label {
-    color: #0044cc; 
-    font-weight: bold;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .btn-submit {
-    display: block;
-    width: 100%;
-    background-color: #0044cc;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-submit:hover {
-    background-color: #003399;
-  }
-  </style>
-  
+}
+
+</style>
