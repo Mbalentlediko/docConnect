@@ -1,3 +1,5 @@
+ import dotenv from "dotenv";
+ dotenv.config({ path: "./.env" });
 import { userRouter } from "./controller/usercontroller.js";
 import { serviceRouter } from "./controller/servicecontroller.js";
 import { appointmentRouter } from "./controller/appointmentcontroller.js";
